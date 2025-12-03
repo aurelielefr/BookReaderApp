@@ -23,13 +23,13 @@ export default class AuthController {
   async register({ request, response }: HttpContext) {
     try {
       const data = request.only([
-        'full_name',
+        'fullName',
         'email',
         'password',
         'bio',
-        'avatar_url',
-        'weekly_time_goal',
-        'yearly_number_goal',
+        'avatarUrl',
+        'weeklyTimeGoal',
+        'yearlyNumberGoal',
       ])
       const user = await User.create(data)
       user.save()

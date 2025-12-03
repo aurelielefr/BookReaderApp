@@ -14,12 +14,12 @@ export default class UsersController {
     try {
       const user = await auth.getUserOrFail()
       const data = request.only([
-        'full_name',
+        'fullName',
         'email',
         'bio',
-        'avatar_url',
-        'weekly_time_goal',
-        'yearly_number_goal',
+        'avatarUrl',
+        'weeklyTimeGoal',
+        'yearlyNumberGoal',
       ])
       user.merge(data)
       await user.save()
